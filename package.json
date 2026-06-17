@@ -1,19 +1,25 @@
 {
   "name": "test-qs-mern",
   "version": "1.0.0",
-  "description": "MERN backend scaffold for answering technical interview questions, one folder per question.",
+  "description": "MERN technical assessment — hard question bank. One self-contained folder per question with buggy code, reference fix, interviewer key, and scenario tests.",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "test": "node --test \"tests/**/*.test.js\"",
-    "test:q1": "node --test \"tests/q1-no-overselling/*.test.js\""
+    "test:q1": "node --test \"tests/q1-duplicate-ratings/*.test.js\"",
+    "test:q2": "node --test \"tests/q2-use-search/*.test.js\"",
+    "test:q3": "node --test \"tests/q3-bulk-import/*.test.js\"",
+    "test:q4": "node --test \"tests/q4-order-schema/*.test.js\"",
+    "test:q5": "node --test \"tests/q5-review-endpoints/*.test.js\"",
+    "test:extras": "node --test \"tests/extras/**/*.test.js\""
   },
   "keywords": [
     "mern",
     "mongodb",
     "express",
+    "react",
     "interview"
   ],
   "license": "MIT",
@@ -23,6 +29,12 @@
     "mongoose": "^8.6.0"
   },
   "devDependencies": {
-    "mongodb-memory-server": "^10.1.2"
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.1.0",
+    "global-jsdom": "^25.0.0",
+    "jsdom": "^25.0.1",
+    "mongodb-memory-server": "^10.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
