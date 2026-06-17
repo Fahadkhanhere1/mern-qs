@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --test tests/",
-    "test:q1": "node --test tests/q1-no-overselling/"
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:q1": "node --test \"tests/q1-no-overselling/*.test.js\""
   },
   "keywords": [
     "mern",

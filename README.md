@@ -50,7 +50,7 @@ tests/
 ## Adding the next question
 1. Create `src/questions/qN-slug/` with a `*.routes.js` exporting an Express router.
 2. Register it in [src/questions/index.js](src/questions/index.js):
-   `router.use('/qN', require('./qN-slug/...routes'))`.
+   `import qN from './qN-slug/...routes.js'` then `router.use('/qN', qN)`.
 3. Add `tests/qN-slug/*.test.js` using `tests/helpers/harness.js`.
 4. Write the answer in `src/questions/qN-slug/README.md`.
 

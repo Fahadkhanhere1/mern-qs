@@ -1,11 +1,11 @@
-const express = require('express');
-const questions = require('./questions');
+import express from 'express';
+import questions from './questions/index.js';
 
 /**
  * Builds the Express app. Kept separate from server start-up so tests can
  * import the app without binding a port.
  */
-function createApp() {
+export function createApp() {
   const app = express();
 
   app.use(express.json());
@@ -27,5 +27,3 @@ function createApp() {
 
   return app;
 }
-
-module.exports = { createApp };

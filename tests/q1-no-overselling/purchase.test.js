@@ -2,11 +2,11 @@
  * Q1 — No Overselling: concurrency + rejection tests for the atomic purchase
  * endpoint. Run with:  npm run test:q1
  */
-const test = require('node:test');
-const assert = require('node:assert/strict');
+import test from 'node:test';
+import assert from 'node:assert/strict';
 
-const { startTestServer, stopTestServer, resetDb } = require('../helpers/harness');
-const Product = require('../../src/questions/q1-no-overselling/product.model');
+import { startTestServer, stopTestServer, resetDb } from '../helpers/harness.js';
+import Product from '../../src/questions/q1-no-overselling/product.model.js';
 
 let server;
 let baseUrl;

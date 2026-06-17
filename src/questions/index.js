@@ -6,9 +6,9 @@
  * that exports a router, then register it here. It will be mounted at
  * `/api/qN-slug`.
  */
-const express = require('express');
+import express from 'express';
 
-const q1 = require('./q1-no-overselling/purchase.routes');
+import q1 from './q1-no-overselling/purchase.routes.js';
 
 const router = express.Router();
 
@@ -27,4 +27,4 @@ router.get('/', (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

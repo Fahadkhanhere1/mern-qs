@@ -2,13 +2,13 @@
  * Q1 curveball — transactional checkout: stock + order + wallet, all-or-nothing.
  * Verifies the transaction rolls back fully when any leg fails.
  */
-const test = require('node:test');
-const assert = require('node:assert/strict');
+import test from 'node:test';
+import assert from 'node:assert/strict';
 
-const { startTestServer, stopTestServer, resetDb } = require('../helpers/harness');
-const Product = require('../../src/questions/q1-no-overselling/product.model');
-const Wallet = require('../../src/questions/q1-no-overselling/wallet.model');
-const Order = require('../../src/questions/q1-no-overselling/order.model');
+import { startTestServer, stopTestServer, resetDb } from '../helpers/harness.js';
+import Product from '../../src/questions/q1-no-overselling/product.model.js';
+import Wallet from '../../src/questions/q1-no-overselling/wallet.model.js';
+import Order from '../../src/questions/q1-no-overselling/order.model.js';
 
 let server;
 let baseUrl;

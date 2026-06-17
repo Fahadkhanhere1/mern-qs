@@ -4,12 +4,12 @@
  *
  * Used by every question's tests so each test file stays focused on scenarios.
  */
-const mongoose = require('mongoose');
-const { createApp } = require('../../src/app');
-const { connectDB, disconnectDB } = require('../../src/config/db');
-const { stopMemoryServer } = require('../../src/config/memoryServer');
+import mongoose from 'mongoose';
+import { createApp } from '../../src/app.js';
+import { connectDB, disconnectDB } from '../../src/config/db.js';
+import { stopMemoryServer } from '../../src/config/memoryServer.js';
 
-async function startTestServer() {
+export async function startTestServer() {
   await connectDB(); // no URI -> in-memory replica set
   const app = createApp();
 
@@ -22,15 +22,13 @@ async function startTestServer() {
   return { server, baseUrl };
 }
 
-async function stopTestServer(server) {
+export async function stopTestServer(server) {
   if (server) await new Promise((resolve) => server.close(resolve));
   await disconnectDB();
   await stopMemoryServer();
 }
 
-async function resetDb() {
+export async function resetDb() {
   const { collections } = mongoose.connection;
   await Promise.all(Object.values(collections).map((c) => c.deleteMany({})));
 }
-
-module.exports = { startTestServer, stopTestServer, resetDb };
