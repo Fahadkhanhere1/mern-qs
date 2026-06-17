@@ -1,0 +1,28 @@
+{
+  "name": "test-qs-mern",
+  "version": "1.0.0",
+  "description": "MERN backend scaffold for answering technical interview questions, one folder per question.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/",
+    "test:q1": "node --test tests/q1-no-overselling/"
+  },
+  "keywords": [
+    "mern",
+    "mongodb",
+    "express",
+    "interview"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.2"
+  }
+}
